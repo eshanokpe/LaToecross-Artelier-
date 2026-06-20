@@ -11,7 +11,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-8">
                         <div class="footer-content-area">
                             <a href="{{ route('home') }}" class="footer-logo" wire:navigate>
-                                <img src="{{ asset('assets/img/footer-logo.svg') }}" alt="Artmart">
+                                <img src="{{ asset('assets/img/logo.png') }}" alt="Artmart">
                             </a>
                             <p>An Art Action Company typically operates in the space of live art, performance, and
                             social practice, often combining elements of activism and community engagement.</p>

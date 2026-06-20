@@ -2,7 +2,7 @@
     <form wire:submit="save">
         {{ $this->form }}
 
-        <div class="mt-10" style="padding-top:30px">
+        <div class="mt-6">
             <x-filament::button type="submit">
                 Save Settings
             </x-filament::button>

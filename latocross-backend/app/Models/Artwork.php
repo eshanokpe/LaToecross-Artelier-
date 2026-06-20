@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Artwork extends Model
 {
-    use HasFactory;
+    use HasFactory; 
 
     // CRITICAL: Allow ALL fields to be saved
     protected $fillable = [
         'title',
-        'artist',
+        'style',
         'description',
         'medium',
         'dimensions',

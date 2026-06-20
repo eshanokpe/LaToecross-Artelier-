@@ -44,7 +44,7 @@ class ArtworksTable
                     ->money('NGN')
                     ->sortable()
                     ->placeholder('Not for sale'),
-
+ 
                 IconColumn::make('is_for_sale')
                     ->label('For Sale')
                     ->boolean(),

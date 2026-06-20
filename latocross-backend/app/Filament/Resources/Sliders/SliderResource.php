@@ -22,7 +22,7 @@ class SliderResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'SliderResource';
+    // protected static ?string $recordTitleAttribute = 'SliderResource';
 
     public static function form(Schema $schema): Schema
     {

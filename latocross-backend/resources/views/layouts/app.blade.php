@@ -25,13 +25,20 @@
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         
         <!-- Title -->
-        <title>@yield('title', 'Artmart - Art & Auction HTML Template.')</title>
-        <link rel="icon" href="{{ asset('assets/img/fav-icon.svg') }}" type="image/gif" sizes="20x20">
-        
+        <title>@yield('title', 'Latocross - Artwork & Fashion .')</title>
+        <link rel="icon" href="{{ asset('assets/img/logo.png') }}" type="image/gif" sizes="20x20">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style type="text/tailwindcss">
+            @layer utilities {
+                .backdrop-blur-md {
+                    backdrop-filter: blur(12px);
+                    -webkit-backdrop-filter: blur(12px);
+                }
+            }
+        </style>
         @livewireStyles
-        @stack('styles')
     </head>
-    <body id="body">
+    <body>
         <!-- scroll top start -->
         <div class="circle-container">
             <svg class="circle-progress svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
@@ -47,9 +54,10 @@
         <main>
             @yield('content')
         </main>
-
+ 
         <!-- Footer Component -->
         @livewire('footer')
+        
 
         <!-- Scripts -->
         <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
@@ -66,6 +74,5 @@
         <script src="{{ asset('assets/js/main.js') }}"></script>
         
         @livewireScripts
-        @stack('scripts')
     </body>
 </html>

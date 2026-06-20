@@ -7,7 +7,10 @@ use App\Http\Controllers\HomeController;
 // Home Route
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
+Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/artworks', [HomeController::class, 'contact'])->name('artwork.index');
+Route::get('/artworks/show', [HomeController::class, 'contact'])->name('artwork.show');
 
 // Dynamic Category Routes
 Route::get('/category/{category:slug}', function (Category $category) {
@@ -63,9 +66,6 @@ Route::get('/departments', function () {
     return view('departments');
 })->name('departments');
 
-Route::get('/blog', function () {
-    return view('blog');
-})->name('blog');
 
 Route::get('/how-to-bid', function () {
     return view('how-to-bid');

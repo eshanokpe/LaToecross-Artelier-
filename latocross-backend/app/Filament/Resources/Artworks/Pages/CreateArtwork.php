@@ -9,3 +9,4 @@ class CreateArtwork extends CreateRecord
 {
     protected static string $resource = ArtworkResource::class;
 }
+ 

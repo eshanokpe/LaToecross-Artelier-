@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Latocross - Contact')
-
+@section('title', 'Latocross - Blog')
+ 
 @section('content')
-    <!-- Top area strats --> 
+    <!-- Top area strats -->
     <div class="top-area">
         <div class="container">
             <div class="row">
@@ -17,14 +17,14 @@
                                     </svg>
                                 </a>
                             </li>
-                            <li>Contact</li>
+                            <li>Blog</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Top area strats -->
-    <livewire:contact-section />   
-   
+    <!-- Top area ends -->
+    <livewire:blog-content />    
+    
 @endsection

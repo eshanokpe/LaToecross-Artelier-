@@ -42,6 +42,11 @@ class Header extends Component
                 ['label' => 'New Designs', 'route' => 'fashion.new-designs'],
             ]
         ],
+        'blog' => [
+            'label' => 'Blog',
+            'route' => 'blog',
+            'children' => []
+        ],
         'contact' => [
             'label' => 'Contact',
             'route' => 'contact',

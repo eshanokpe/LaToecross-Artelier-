@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Artworks\Schemas;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
@@ -22,12 +23,13 @@ class ArtworkForm
                     ->columnSpanFull(),
 
                 Select::make('style')
-                    ->label('Art Style')
+                    ->label('Art Category')
                     ->options([
-                        'realism' => 'Realism',
-                        'impressionism' => 'Impressionism',
-                        'abstract' => 'Abstract',
-                        'mixed_media' => 'Mixed Media',
+                        'abstract' => 'Abstract Painting',
+                        'landscape' => 'Landscape Painting',
+                        'mixed_media' => 'Mixed Media Painting',
+                        'figure' => 'Figure Painting',
+                        'miniature' => 'Miniature',
                     ])
                     ->required()
                     ->columnSpanFull(),
@@ -54,9 +56,8 @@ class ArtworkForm
                 Toggle::make('is_featured')
                     ->label('Feature on Homepage'),
 
-                Textarea::make('description')
-                    ->label('Description')
-                    ->rows(5)
+                RichEditor::make('description')
+                    ->required()
                     ->placeholder('Tell the story behind this piece...')
                     ->columnSpanFull(),
 
