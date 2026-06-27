@@ -27,9 +27,12 @@ class HomeController extends Controller
         return view('frontend.about');
     }
 
-    /**
-     * Display single artwork details
-     */
+    public function artworks()
+    {
+        $artworks = Artwork::all();
+        return view('frontend.artworks.artworks', compact('artworks'));
+    }
+
     public function artworkShow($id)
     {
         // Find artwork by its slug instead of ID

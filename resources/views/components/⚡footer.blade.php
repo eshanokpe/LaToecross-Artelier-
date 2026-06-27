@@ -70,7 +70,7 @@ new class extends Component
                             </a>
                             <!-- ✅ Dynamic About Us Content -->
                            <p class="footer-about-text">
-                                {!! Str::limit(nl2br($settings['about_content']) ?? 'An Art Action Company typically operates in the space of live art, performance, and social practice, often combining elements of activism and community engagement.', 120) !!}
+                                {!! Str::limit(nl2br($settings['about_content']) ?? 'An Art Action Company typically operates in the space of live art, performance, and social practice, often combining elements of activism and community engagement.', 250) !!}
 
                                 @if(strlen(trim(strip_tags($settings['about_content'] ?? ''))) > 120)
                                     <a href="{{ route('about') }}" class="read-more-link">Read More</a>
@@ -206,23 +206,7 @@ new class extends Component
                                 @enderror
                             </form>
 
-                            <div class="payment-area mt-4">
-                                <h6>Secured Payment Gateways</h6>
-                                <ul class="payment-options">
-                                    <li>
-                                        <img src="{{ asset('assets/img/home1/icon/visa.svg') }}" alt="Visa">
-                                    </li>
-                                    <li>
-                                        <img src="{{ asset('assets/img/home1/icon/master-card.svg') }}" alt="MasterCard">
-                                    </li>
-                                    <li>
-                                        <img src="{{ asset('assets/img/home1/icon/american-express.svg') }}" alt="American Express">
-                                    </li>
-                                    <li>
-                                        <img src="{{ asset('assets/img/home1/icon/maestro.svg') }}" alt="Maestro">
-                                    </li>
-                                </ul>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>

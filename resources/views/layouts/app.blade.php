@@ -69,7 +69,8 @@
         <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
         <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
         <script src="{{ asset('assets/js/jquery.fancybox.min.js') }}"></script>
-        <script src="{{ asset('assets/js/wow.min.js') }}"></script>
+        <script src="{{ asset('assets/js/wow.min.js') }}">
+        <script src="{{ asset('assets/js/range-slider.js') }}">
         <script src="{{ asset('assets/js/jquery.marquee.min.js') }}"></script>
         <script src="{{ asset('assets/js/main.js') }}"></script>
         

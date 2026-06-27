@@ -34,7 +34,7 @@ class Header extends Component
                 ['label' => 'Figure Painting', 'route' => 'artworks.figure.paintings'],
                 ['label' => 'Miniature', 'route' => 'artworks.miniature.paintings'],
             ]
-        ],
+        ], 
         'fashion' => [
             'label' => 'Fashion',
             'route' => 'fashions.index',

@@ -17,10 +17,10 @@ Route::get('/fashions', [HomeController::class, 'fashions'])->name('fashions.ind
 Route::get('/category/{category:slug}', function (Category $category) {
     return view('category.show', ['category' => $category]);
 })->name('category.show');
-
+ 
 // Arkworks Routes
 Route::prefix('arkworks')->name('artworks.')->group(function () {
-   Route::get('/', [HomeController::class, 'contact'])->name('index');
+   Route::get('/', [HomeController::class, 'artworks'])->name('index');
    Route::get('/abstract', [HomeController::class, 'contact'])->name('abstract.paintings');
    Route::get('/landscape', [HomeController::class, 'contact'])->name('landscape.paintings');
    Route::get('/mixed-media', [HomeController::class, 'contact'])->name('mixed-media.paintings');
