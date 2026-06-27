@@ -27,6 +27,7 @@
     </div>
     <!-- Top area ends -->
     <livewire:about-section2 />      
+    <livewire:feature-section />      
     
 @endsection
  
