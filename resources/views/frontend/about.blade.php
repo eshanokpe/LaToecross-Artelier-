@@ -26,8 +26,7 @@
         </div>
     </div>
     <!-- Top area ends -->
-    <livewire:about-section2 />   
-    <livewire:art-section-slider />   
+    <livewire:about-section2 />      
     
 @endsection
  

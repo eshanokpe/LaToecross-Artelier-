@@ -231,8 +231,8 @@ new class extends Component
             <div class="footer-bottom">
                 <div class="copyright-area">
                     <p>
-                        ©Copyright {{ date('Y') }} <a href="{{ route('home') }}">Artmart</a>
-                        | Design By <a href="https://www.egenslab.com/" target="_blank" rel="noopener noreferrer">Egens Lab</a>
+                        ©Copyright {{ date('Y') }} <a href="{{ route('home') }}">LaToecross Artelier</a>
+                        | Design By <a href="#" target="_blank" rel="noopener noreferrer">LaToecross Artelier</a>
                     </p>
                 </div>
                 <div class="footer-bottom-right">
