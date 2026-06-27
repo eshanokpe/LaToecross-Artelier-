@@ -14,12 +14,13 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class ArtworkEnquiryResource extends Resource
 {
     protected static ?string $model = ArtworkEnquiry::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedChatBubbleLeftEllipsis;
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -29,9 +30,15 @@ class ArtworkEnquiryResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Artwork Enquiries';
 
-    protected static ?string $navigationGroup = 'Art Management';
+    protected static string|UnitEnum|null $navigationGroup = 'Art Management';
 
     protected static ?int $navigationSort = 10;
+
+    // ❌ This removes the "Create" button globally
+    public static function canCreate(): bool
+    {
+        return false;
+    }
 
     public static function form(Schema $schema): Schema
     {
@@ -50,32 +57,28 @@ class ArtworkEnquiryResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array
     {
         return [
             'index' => ListArtworkEnquiries::route('/'),
-            // 'create' => CreateArtworkEnquiry::route('/create'), // Removed - enquiries are created from frontend
-            'view' => ViewArtworkEnquiry::route('/{record}'),
-            'edit' => EditArtworkEnquiry::route('/{record}/edit'),
+            // ❌ Removed create route entirely
+            'view'  => ViewArtworkEnquiry::route('/{record}'),
+            'edit'  => EditArtworkEnquiry::route('/{record}/edit'),
         ];
     }
 
-    /**
-     * Remove the "Create" button from the header actions.
-     */
     public static function getGlobalSearchResultTitle($record): string
     {
-        return $record->name . ' - ' . $record->artwork?->title ?? 'N/A';
+        return $record->name . ' - ' . ($record->artwork?->title ?? 'N/A');
     }
 
     public static function getNavigationBadge(): ?string
     {
-        return static::getModel()::where('is_read', false)->count() ?: null;
+        $count = static::getModel()::where('is_read', false)->count();
+        return $count > 0 ? (string) $count : null;
     }
 
     public static function getNavigationBadgeColor(): ?string

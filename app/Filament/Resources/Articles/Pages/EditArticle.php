@@ -18,4 +18,4 @@ class EditArticle extends EditRecord
             DeleteAction::make(),
         ];
     }
-}
+} 

@@ -26,8 +26,9 @@ class ArtworkEnquiriesTable
     {
         return $table
             ->columns([
-                TextColumn::make('artwork_id')
+                TextColumn::make('id')
                     ->numeric()
+                    ->label('ID')
                     ->sortable()
                     ->toggleable()
                     ->searchable(),
@@ -102,10 +103,10 @@ class ArtworkEnquiriesTable
                
                 
             ])
-            // ->recordActions([
-            //     ViewAction::make(),
-            //     EditAction::make(),
-            // ])
+            ->recordActions([
+                ViewAction::make(),
+                EditAction::make(),
+            ])
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
