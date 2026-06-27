@@ -24,7 +24,7 @@
                         <img alt="image" class="img-fluid dark" src="{{ asset('images/logo.png') }}" style="height:100px">
                     </a>
                 </div>
-
+ 
                 <ul class="menu-list">
                     @foreach($menuItems as $key => $item)
                         @php
@@ -44,7 +44,7 @@
                                    {{ $hasChildren ? 'menu-item-has-children' : '' }}">
                             
                             @if($hasChildren)
-                                <a href="#" class="drop-down" 
+                                <a href="{{ $item['route'] }}" class="drop-down" 
                                    @click.prevent="activeDropdown = activeDropdown === '{{ $key }}' ? null : '{{ $key }}'"
                                    x-bind:class="{ 'active': activeDropdown === '{{ $key }}' }">
                                     {{ $item['label'] }}

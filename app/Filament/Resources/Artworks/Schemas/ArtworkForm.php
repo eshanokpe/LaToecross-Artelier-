@@ -22,7 +22,7 @@ class ArtworkForm
                     ->columnSpanFull(),
 
                 Select::make('style')
-                    ->label('Art Category')
+                    ->label('Art Category') 
                     ->options([
                         'abstract' => 'Abstract Painting',
                         'landscape' => 'Landscape Painting',

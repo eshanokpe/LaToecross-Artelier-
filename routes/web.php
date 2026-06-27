@@ -21,20 +21,11 @@ Route::get('/category/{category:slug}', function (Category $category) {
 
 // Arkworks Routes
 Route::prefix('arkworks')->name('arkworks.')->group(function () {
-    Route::get('/paintings', function () {
-        $category = Category::where('slug', 'original-paintings')->first();
-        return view('arkworks.paintings', ['category' => $category]);
-    })->name('paintings');
-    
-    Route::get('/wall-art', function () {
-        $category = Category::where('slug', 'wall-art')->first();
-        return view('arkworks.wall-art', ['category' => $category]);
-    })->name('wall-art');
-    
-    Route::get('/new-arrivals', function () {
-        $category = Category::where('slug', 'new-arrivals')->first();
-        return view('arkworks.new-arrivals', ['category' => $category]);
-    })->name('new-arrivals');
+   Route::get('/abstract', [HomeController::class, 'contact'])->name('abstract.paintings');
+   Route::get('/landscape', [HomeController::class, 'contact'])->name('landscape.paintings');
+   Route::get('/mixed-media', [HomeController::class, 'contact'])->name('mixed-media.paintings');
+   Route::get('/figure', [HomeController::class, 'contact'])->name('figure.paintings');
+   Route::get('/miniature', [HomeController::class, 'contact'])->name('miniature.paintings');
 });
 
 // Fashion Routes

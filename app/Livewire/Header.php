@@ -26,18 +26,18 @@ class Header extends Component
         ], 
         'arkworks' => [
             'label' => 'Arkworks',
-            'route' => 'arkworks',
+            'route' => 'arkworks.index',
             'children' => [
-                ['label' => 'Abstract Painting', 'route' => 'arkworks.paintings'],
-                ['label' => 'Landscape Painting', 'route' => 'arkworks.wall-art'],
-                ['label' => 'Mixed Media Painting', 'route' => 'arkworks.new-arrivals'],
-                ['label' => 'Figure Painting', 'route' => 'arkworks.new-arrivals'],
-                ['label' => 'Miniature', 'route' => 'arkworks.new-arrivals'],
+                ['label' => 'Abstract Painting', 'route' => 'arkworks.abstract.paintings'],
+                ['label' => 'Landscape Painting', 'route' => 'arkworks.landscape.paintings'],
+                ['label' => 'Mixed Media Painting', 'route' => 'arkworks.mixed-media.paintings'],
+                ['label' => 'Figure Painting', 'route' => 'arkworks.figure.paintings'],
+                ['label' => 'Miniature', 'route' => 'arkworks.miniature.paintings'],
             ]
         ],
         'fashion' => [
             'label' => 'Fashion',
-            'route' => 'fashion',
+            'route' => 'fashion.index',
             'children' => [
                 ['label' => 'Art You Wear', 'route' => 'fashion.art-wear'],
                 ['label' => 'Bold Designs', 'route' => 'fashion.bold-designs'],
