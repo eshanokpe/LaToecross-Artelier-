@@ -1,30 +1,41 @@
 @extends('layouts.app')
 
-@section('title', 'Latocross - Contact')
+@section('title', 'Latocross Artelier - Contact Us')
+@section('meta_description', 'Get in touch with Latocross Artelier. We\'d love to hear from you - whether you have questions about art, need assistance, or want to collaborate.')
 
 @section('content')
-    <!-- Top area strats --> 
-    <div class="top-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 d-flex mb-120">
-                    <div class="top-content">
-                        <ul>
-                            <li>
-                                <a href="index.html">
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M1.125 5.99955L5.602 1.52205C5.822 1.30255 6.178 1.30255 6.3975 1.52205L10.875 5.99955M2.25 4.87455V9.93705C2.25 10.2475 2.502 10.4995 2.8125 10.4995H4.875V8.06205C4.875 7.75155 5.127 7.49955 5.4375 7.49955H6.5625C6.873 7.49955 7.125 7.75155 7.125 8.06205V10.4995H9.1875C9.498 10.4995 9.75 10.2475 9.75 9.93705V4.87455M4.125 10.4995H8.25" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li>Contact</li>
-                        </ul>
-                    </div>
+    <!-- Breadcrumb Section with Brand Color -->
+    <section class="breadcrumb-section" style="background: linear-gradient(135deg, #1a0a0f 0%, #DB2077 50%, #ff6b9d 100%);">
+        <div class="container mx-auto px-4 py-12 md:py-16">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-white mb-2" style="font-family: 'Georgia', serif;">Contact Us</h1>
+                    <p class="text-pink-200 text-sm md:text-base">Get in touch with the Latocross Artelier team</p>
                 </div>
+                <nav aria-label="Breadcrumb" class="mt-4 md:mt-0">
+                    <ol class="flex items-center space-x-2 text-sm">
+                        <li>
+                            <a href="{{ route('home') }}" class="text-pink-200 hover:text-white transition-colors">
+                                <svg class="w-4 h-4 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                                </svg>
+                                <span class="sr-only">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <svg class="w-4 h-4 text-pink-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </li>
+                        <li>
+                            <span class="text-white font-medium">Contact Us</span>
+                        </li>
+                    </ol>
+                </nav>
             </div>
         </div>
-    </div>
-    <!-- Top area strats -->
-    <livewire:contact-section />   
-   
+    </section>
+
+    <!-- Contact Livewire Component -->
+    <livewire:contact-section />
 @endsection
