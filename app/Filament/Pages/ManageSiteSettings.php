@@ -94,7 +94,7 @@ class ManageSiteSettings extends Page implements HasForms
                                         'h2', 'h3', 'paragraph', 'undo', 'redo'
                                     ])
                                     ->columnSpanFull(),
-
+ 
                                 Textarea::make('vision')
                                     ->label('Our Vision')
                                     ->rows(4)
