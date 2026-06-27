@@ -9,7 +9,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('/artworks', [HomeController::class, 'contact'])->name('artworks.index');
 Route::get('/artworks/show', [HomeController::class, 'contact'])->name('artwork.show');
 Route::get('/fashions', [HomeController::class, 'fashions'])->name('fashions.index');
 
@@ -20,7 +19,8 @@ Route::get('/category/{category:slug}', function (Category $category) {
 })->name('category.show');
 
 // Arkworks Routes
-Route::prefix('arkworks')->name('arkworks.')->group(function () {
+Route::prefix('arkworks')->name('artworks.')->group(function () {
+   Route::get('/', [HomeController::class, 'contact'])->name('index');
    Route::get('/abstract', [HomeController::class, 'contact'])->name('abstract.paintings');
    Route::get('/landscape', [HomeController::class, 'contact'])->name('landscape.paintings');
    Route::get('/mixed-media', [HomeController::class, 'contact'])->name('mixed-media.paintings');
