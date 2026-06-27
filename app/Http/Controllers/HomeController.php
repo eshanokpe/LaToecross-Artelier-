@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Artwork; // Make sure your Artwork model exists
 
 class HomeController extends Controller
 {
@@ -24,5 +25,16 @@ class HomeController extends Controller
     public function about()
     {
         return view('frontend.about');
+    }
+
+    /**
+     * Display single artwork details
+     */
+    public function artworkShow($id)
+    {
+        // Find artwork by its slug instead of ID
+        $artwork = Artwork::where('id', $id)->firstOrFail();
+
+        return view('frontend.artworks.artwork-show', compact('artwork'));
     }
 }
