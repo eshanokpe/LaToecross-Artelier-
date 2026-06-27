@@ -44,7 +44,7 @@
                                    {{ $hasChildren ? 'menu-item-has-children' : '' }}">
                             
                             @if($hasChildren)
-                                <a href="{{ $item['route'] }}" class="drop-down" 
+                                <a href="{{ route($item['route']) }}" class="drop-down" 
                                    @click.prevent="activeDropdown = activeDropdown === '{{ $key }}' ? null : '{{ $key }}'"
                                    x-bind:class="{ 'active': activeDropdown === '{{ $key }}' }">
                                     {{ $item['label'] }}
