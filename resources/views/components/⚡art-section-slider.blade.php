@@ -47,8 +47,8 @@ new class extends Component
 
 <div class="art-section-wrapper">
     <div class="home1-general-art-slider-section py-16 md:py-20" style="background: #FFFFFF;">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
+        <div class="container mx-auto px-0">
+            <div class="max-w-7xl mx-auto">
                 <!-- Section Header -->
                 <div class="flex flex-wrap items-center justify-between gap-4 mb-10">
                     <div class="section-title">
@@ -79,7 +79,7 @@ new class extends Component
                             <li class="flex-shrink-0">
                                 <button 
                                     wire:click="filterByCategory('{{ $key }}')"
-                                    class="nav-link px-4 py-2.5 rounded-full font-medium transition-all duration-300 whitespace-nowrap"
+                                    class="nav-link px-3 py-2.5 rounded-full font-medium transition-all duration-300 whitespace-nowrap"
                                     style="{{ $selectedCategory === $key 
                                         ? 'background: linear-gradient(135deg, #DB2077, #ff6b9d); color: white; box-shadow: 0 4px 15px rgba(219, 32, 119, 0.3);' 
                                         : 'background: #faf0f5; color: #6b3b4f;' }}"

@@ -33,7 +33,6 @@ new class extends Component
                     <!-- Image Column -->
                     <div class="relative">
                         <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(219, 32, 119, 0.2), rgba(255, 107, 157, 0.2));"></div>
                             <img
                                 src="{{ $aboutImage ? asset('storage/' . $aboutImage) : asset('assets/img/home2/home2-about-img.jpg') }}"
                                 alt="{{ $aboutTitle }}"
