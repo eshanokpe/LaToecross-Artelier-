@@ -9,98 +9,122 @@ new class extends Component
     public ?string $aboutTitle = null;
     public ?string $aboutContent = null;
     public ?string $aboutImage = null;
+    public ?string $establishedYear = null;
 
     public function mount(): void
     {
-        $this->aboutTitle   = Setting::get('about_title', 'Discover Our Essence');
+        $this->aboutTitle = Setting::get('about_title', 'Discover Our Essence');
         $this->aboutContent = Str::limit(
-            strip_tags(Setting::get('about_content', 'At Artmart, we are passionate art enthusiasts dedicated to connecting artists and collectors through dynamic and exciting auctions.')),
-            325
+            strip_tags(Setting::get('about_content', 'At Latocross Artelier, we are passionate art enthusiasts dedicated to connecting artists and collectors through dynamic and exciting auctions.')),
+            600
         );
-        $this->aboutImage   = Setting::get('about_image');
+        $this->aboutImage = Setting::get('about_image');
+        $this->establishedYear = Setting::get('established_year', '2020');
     }
 };
 ?>
 
-<div>
+<div class="about-section-wrapper">
     <!-- Home2 About Section Start -->
-    <div class="home2-about-section mb-120">
-        <div class="container">
-            <div class="about-wrapper">
-                <div class="row g-4">
-                    <div class="col-xxl-5 col-lg-6">
-                        <div class="about-img">
+    <div class="home2-about- py-16 md:py-15" style="background: linear-gradient(180deg, #FFFFFF 0%, #faf0f5 100%);">
+        <div class="container mx-auto px-4">
+            <div class="about-wrapper max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- Image Column -->
+                    <div class="relative">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                            <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(219, 32, 119, 0.2), rgba(255, 107, 157, 0.2));"></div>
                             <img
                                 src="{{ $aboutImage ? asset('storage/' . $aboutImage) : asset('assets/img/home2/home2-about-img.jpg') }}"
-                                alt="{{ $aboutTitle }}">
-                        </div>
-                    </div>
-                    <div class="col-xxl-7 col-lg-6">
-                        <div class="about-content">
-                            <h3>{{ $aboutTitle }}</h3>
-                            <p>{{ $aboutContent }}</p>
-                            <div class="feature-list-and-btn-area">
-                                <ul>
-                                    <li>
-                                        <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 6.5L5 10.5L11 1.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        Integrity
-                                    </li>
-                                    <li>
-                                        <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 6.5L5 10.5L11 1.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        Diversity
-                                    </li>
-                                    <li>
-                                        <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 6.5L5 10.5L11 1.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        Accessibility
-                                    </li>
-                                    <li>
-                                        <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 6.5L5 10.5L11 1.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        Support
-                                    </li>
-                                </ul>
-                                <a href="{{ route('about') }}" class="learn-btn">
-                                    <svg width="104" height="104" viewBox="0 0 104 104" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M59.0718 6.7112L60.4661 12.8837C61.7977 18.7789 68.5628 21.5811 73.673 18.3542L79.0235 14.9754C85.5566 10.8499 93.1501 18.4434 89.0246 24.9765L85.6458 30.327C82.4189 35.4372 85.2211 42.2023 91.1163 43.5339L97.2888 44.9282C104.826 46.6306 104.826 57.3694 97.2888 59.0718L91.1163 60.4661C85.2211 61.7977 82.4189 68.5628 85.6458 73.673L89.0246 79.0235C93.1501 85.5566 85.5566 93.1501 79.0235 89.0246L73.673 85.6458C68.5628 82.4189 61.7977 85.2211 60.4661 91.1163L59.0718 97.2888C57.3694 104.826 46.6306 104.826 44.9282 97.2888L43.5339 91.1163C42.2023 85.2211 35.4372 82.4189 30.327 85.6458L24.9765 89.0246C18.4434 93.1501 10.8499 85.5566 14.9754 79.0235L18.3542 73.673C21.5811 68.5628 18.7789 61.7977 12.8837 60.4661L6.71121 59.0718C-0.825571 57.3694 -0.825575 46.6306 6.7112 44.9282L12.8837 43.5339C18.7789 42.2023 21.5811 35.4372 18.3542 30.327L14.9754 24.9765C10.8499 18.4434 18.4434 10.8499 24.9765 14.9754L30.327 18.3542C35.4372 21.5811 42.2023 18.7789 43.5339 12.8837L44.9282 6.71121C46.6306 -0.825571 57.3694 -0.825575 59.0718 6.7112Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    <span>
-                                        Read <br>More
-                                    </span>
-                                </a>
+                                alt="{{ $aboutTitle }}"
+                                class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                                loading="lazy"
+                            >
+                            <div class="absolute bottom-0 left-0 right-0 p-6" style="background: linear-gradient(180deg, transparent, rgba(26, 10, 15, 0.8));">
+                                <p class="text-white text-sm font-medium" style="font-family: 'Georgia', serif;">Celebrating African Artistry Since {{ $establishedYear }}</p>
                             </div>
+                        </div>
+                        <!-- Decorative Elements -->
+                        <div class="absolute -top-4 -right-4 w-24 h-24 rounded-full opacity-50 -z-10" style="background: linear-gradient(135deg, #fce4ec, #f5d6e0);"></div>
+                        <div class="absolute -bottom-4 -left-4 w-32 h-32 rounded-full opacity-50 -z-10" style="background: linear-gradient(135deg, #fce4ec, #f5d6e0);"></div>
+                    </div>
+
+                    <!-- Content Column -->
+                    <div class="about-content space-y-6">
+                        <div>
+                            <span class="inline-block font-semibold text-sm uppercase tracking-wider px-4 py-1.5 rounded-full" style="color: #DB2077; background: #fce4ec;">
+                                About Latocross Artelier
+                            </span>
+                            <h3 class="text-3xl md:text-4xl font-bold mt-4" style="color: #1a0a0f; font-family: 'Georgia', serif;">
+                                {{ $aboutTitle }}
+                            </h3>
+                        </div>
+                        
+                        <p class="text-gray-700 leading-relaxed" style="color: #2d1b24;">
+                            {{ $aboutContent }}
+                        </p>
+                        
+                        <div class="feature-list-and-btn-area space-y-6">
+                            <ul class="grid grid-cols-2 gap-3">
+                                <li class="flex items-center gap-2 text-sm font-medium" style="color: #2d1b24;">
+                                    <svg class="w-5 h-5 flex-shrink-0" style="color: #DB2077;" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Integrity
+                                </li>
+                                <li class="flex items-center gap-2 text-sm font-medium" style="color: #2d1b24;">
+                                    <svg class="w-5 h-5 flex-shrink-0" style="color: #DB2077;" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Diversity
+                                </li>
+                                <li class="flex items-center gap-2 text-sm font-medium" style="color: #2d1b24;">
+                                    <svg class="w-5 h-5 flex-shrink-0" style="color: #DB2077;" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Accessibility
+                                </li>
+                                <li class="flex items-center gap-2 text-sm font-medium" style="color: #2d1b24;">
+                                    <svg class="w-5 h-5 flex-shrink-0" style="color: #DB2077;" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Support
+                                </li>
+                            </ul>
+                            <a href="{{ route('about') }}" 
+                               class="group inline-flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105"
+                               style="background: linear-gradient(135deg, #DB2077, #ff6b9d); color: white;">
+                                <span>Learn More About Us</span>
+                                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="countdown-wrap">
-                    <ul class="countdown-list">
-                        <li class="single-countdown">
-                            <div class="number">
-                                <h3 class="counter">65</h3>
-                                <strong>k</strong>
-                            </div>
-                            <span>Happy Clients</span>
-                        </li>
-                        <li class="single-countdown">
-                            <div class="number">
-                                <h3 class="counter">1.5</h3>
-                                <strong>k</strong>
-                            </div>
-                            <span>Artworks &amp; Designs</span>
-                        </li>
-                        <li class="single-countdown">
-                            <div class="number">
-                                <h3 class="counter">350</h3>
-                            </div>
-                            <span>Artists &amp; Designers</span>
-                        </li>
-                    </ul>
+
+                <!-- Stats Counter Section -->
+                <div class="countdown-wrap mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="single-countdown bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300" style="border-bottom: 4px solid #DB2077;">
+                        <div class="number flex items-center justify-center gap-1">
+                            <h3 class="text-4xl font-bold" style="color: #DB2077;">65</h3>
+                            <strong class="text-2xl" style="color: #DB2077;">k</strong>
+                        </div>
+                        <span class="text-sm font-medium" style="color: #6b3b4f;">Happy Clients</span>
+                    </div>
+                    <div class="single-countdown bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300" style="border-bottom: 4px solid #ff6b9d;">
+                        <div class="number flex items-center justify-center gap-1">
+                            <h3 class="text-4xl font-bold" style="color: #ff6b9d;">1.5</h3>
+                            <strong class="text-2xl" style="color: #ff6b9d;">k</strong>
+                        </div>
+                        <span class="text-sm font-medium" style="color: #6b3b4f;">Artworks &amp; Designs</span>
+                    </div>
+                    <div class="single-countdown bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300" style="border-bottom: 4px solid #ff9ec4;">
+                        <div class="number">
+                            <h3 class="text-4xl font-bold" style="color: #ff9ec4;">350</h3>
+                        </div>
+                        <span class="text-sm font-medium" style="color: #6b3b4f;">Artists &amp; Designers</span>
+                    </div>
                 </div>
             </div>
         </div>
