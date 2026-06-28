@@ -57,33 +57,16 @@ Route::get('/artists-portfolio', function () {
     return view('artists-portfolio');
 })->name('artists-portfolio');
 
-Route::get('/art-catalog', function () {
-    return view('art-catalog');
-})->name('art-catalog');
-
-Route::get('/departments', function () {
-    return view('departments');
-})->name('departments');
 
 
-Route::get('/how-to-bid', function () {
-    return view('how-to-bid');
-})->name('how-to-bid');
-
-Route::get('/how-to-sell', function () {
-    return view('how-to-sell');
-})->name('how-to-sell');
 
 
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/privacy', [HomeController::class, 'privacy'])->name('privacy');
+Route::get('/terms', [HomeController::class, 'terms'])->name('terms');
+Route::get('/support', [HomeController::class, 'support'])->name('support');
+Route::post('/support/submit', [HomeController::class, 'submitSupport'])->name('support.submit');
 
-Route::get('/support', function () {
-    return view('support');
-})->name('support');
 
-Route::get('/terms', function () {
-    return view('terms');
-})->name('terms');
 
 

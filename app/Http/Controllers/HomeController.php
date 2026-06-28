@@ -29,6 +29,33 @@ class HomeController extends Controller
         return view('frontend.privacy');
     }
 
+    public function terms(){
+        return view('frontend.terms');
+    }
+
+    public function support(){
+        return view('frontend.support');
+    }
+
+    public function submitSupport(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'nullable|string|max:20',
+            'subject' => 'required|string|max:100',
+            'message' => 'required|string|min:10|max:5000',
+        ]);
+
+        // Store support ticket in database
+        SupportTicket::create($validated);
+
+        // Send notification email
+        Mail::to('support@latocross.com')->send(new SupportTicketMail($validated));
+
+        return back()->with('support_success', 'Your support ticket has been submitted. Our team will get back to you within 24 hours.');
+    }
+
     public function blog()
     {
         return view('frontend.blog.blog');
