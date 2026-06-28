@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     public function up()
-    {
+    { 
         // ✅ Only create if it does NOT exist
         if (!Schema::hasTable('artwork_enquiries')) {
             Schema::create('artwork_enquiries', function (Blueprint $table) {
