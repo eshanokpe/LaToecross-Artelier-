@@ -69,3 +69,7 @@ php artisan storage:link
 https://demo.egenslab.com/html/artmart/preview/
 
 php artisan make:livewire artworks-details
+
+Art That Speaks To Your Soul
+
+Unlock a world of imagination with our curated collection of original artworks. From bold abstracts to serene landscapes, discover pieces that inspire, captivate.

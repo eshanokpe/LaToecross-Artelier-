@@ -4,6 +4,7 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FashionController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Storage;
 
 // Home Route
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -68,5 +69,12 @@ Route::get('/support', [HomeController::class, 'support'])->name('support');
 Route::post('/support/submit', [HomeController::class, 'submitSupport'])->name('support.submit');
 
 
-
+Route::get('/storage/{path}', function ($path) {
+    $disk = Storage::disk('public');
+    if (! $disk->exists($path)) {
+        abort(404);
+    }
+    return response($disk->get($path))
+        ->header('Content-Type', $disk->mimeType($path));
+})->where('path', '.*');
 
