@@ -6,35 +6,24 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
-        Schema::create('artwork_enquiries', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('artwork_id')
-                  ->constrained('artworks')
-                  ->onDelete('cascade')
-                  ->onUpdate('cascade');
-            $table->string('name');
-            $table->string('email');
-            $table->string('phone')->nullable();
-            $table->text('message');
-            $table->boolean('is_read')->default(false);
-            $table->timestamps();
-            
-            // Add indexes for better performance
-            $table->index('email');
-            $table->index('is_read');
-            $table->index('created_at');
-        });
+        // ✅ Only create if it does NOT exist
+        if (!Schema::hasTable('artwork_enquiries')) {
+            Schema::create('artwork_enquiries', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('artwork_id')->constrained()->onDelete('cascade');
+                $table->string('name');
+                $table->string('email');
+                $table->string('phone')->nullable();
+                $table->text('message');
+                $table->boolean('is_read')->default(false);
+                $table->timestamps();
+            });
+        }
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('artwork_enquiries');
     }
