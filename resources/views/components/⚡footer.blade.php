@@ -71,12 +71,13 @@ new class extends Component
                             <a href="{{ route('home') }}" class="footer-logo inline-block">
                                 <img src="{{ asset('images/logo.png') }}" 
                                      alt="Latocross Artelier" 
-                                     class="h-16.5 md:h-16.5 ">
+                                     style="width:100px"
+                                    >
                             </a>
 
                             <!-- About Text -->
-                            <p class="text-sm leading-relaxed" style="color: #cdb4c8;">
-                                {!! Str::limit(nl2br($settings['about_content']) ?? 'An Art Action Company typically operates in the space of live art, performance, and social practice, often combining elements of activism and community engagement.', 180) !!}
+                            <p class="text-sm leading-relaxed" style="color: #cdb4c8; ">
+                                {!! Str::limit(nl2br($settings['about_content']) ?? 'An Art Action Company typically operates in the space of live art, performance, and social practice, often combining elements of activism and community engagement.', 175) !!}
                                 @if(strlen(trim(strip_tags($settings['about_content'] ?? ''))) > 120)
                                     <a href="{{ route('about') }}" class="font-medium hover:underline ml-1" style="color: #DB2077;">
                                         Read More

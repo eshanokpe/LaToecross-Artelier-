@@ -23,7 +23,7 @@ new class extends Component
                 @foreach ($sliders as $slider)
                     <div class="swiper-slide">
                         <div class="banner-bg min-h-[600px] md:min-h-[700px] bg-cover bg-center" 
-                             style="background-image: linear-gradient(135deg, rgba(26, 10, 15, 0.7) 0%, rgba(219, 32, 119, 0.4) 100%), url({{ asset('storage/' . $slider->image) }});">
+                             style="background-image: linear-gradient(135deg, rgba(26, 10, 15, 0.7) 0%, rgba(26, 10, 15, 0.7) 100%), url({{ asset('storage/' . $slider->image) }});">
                         </div>
                     </div>
                 @endforeach

@@ -5532,7 +5532,7 @@ header.style-2 .mobile-logo-area .menu-close-btn:hover i {
   }
 }
 .footer-section .footer-menu-wrap .footer-content-area .footer-logo {
-  margin-bottom: 35px;
+  margin-bottom: -30px;
   display: block;
 }
 @media (max-width: 576px) {

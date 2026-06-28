@@ -6,8 +6,11 @@ use App\Http\Controllers\HomeController;
 
 // Home Route
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::redirect('/admin/dashboard', '/admin')->name('admin.dashboard.redirect');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
+Route::get('/article-details/{slug}', [HomeController::class, 'articleShow'])->name('article.show');
+
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/artworks/{id}', [HomeController::class, 'artworkShow'])->name('artwork.show');
 Route::get('/fashions', [HomeController::class, 'fashions'])->name('fashions.index');

@@ -17,12 +17,7 @@ class ArticleForm
         return $schema
             ->components([
                 TextInput::make('title')
-                    ->required(),
-                TextInput::make('slug')
-                    ->required(),
-                Textarea::make('excerpt')
-                    ->default(null)
-                    ->columnSpanFull(),
+                    ->required(), 
                 RichEditor::make('content')
                     ->required()
                     ->columnSpanFull(),
