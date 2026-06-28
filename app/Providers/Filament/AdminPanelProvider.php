@@ -32,7 +32,8 @@ class AdminPanelProvider extends PanelProvider
             ->brandLogo(asset('images/logo.jpeg'))
             ->brandLogoHeight('3.8rem')
             ->brandName('LaToecross Artelier')
-            ->homeUrl(url('/'))
+            ->homeUrl(url('/admin/dashboard'))
+            ->favicon(asset('images/logo.jpeg')) 
             ->userMenu(false)
             ->maxContentWidth('full')
             // ❌ REMOVED ->accessCheck() — NOT SUPPORTED IN YOUR VERSION
