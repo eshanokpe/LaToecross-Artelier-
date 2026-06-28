@@ -36,7 +36,7 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "@php -r \"$l='/home/u338147728/domains/latoecross.com/public_html/latocross/storage/app/public'; $t='/home/u338147728/persistent_storage/uploads'; if (is_link($l)) { if (readlink($l) !== $t) { unlink($l); symlink($t, $l); } } elseif (is_dir($l)) { @rmdir($l); symlink($t, $l); } else { symlink($t, $l); }\""
+            "@php scripts/fix-storage.php"
         ],
         "post-update-cmd": [
             "@php artisan storage:link --force",
