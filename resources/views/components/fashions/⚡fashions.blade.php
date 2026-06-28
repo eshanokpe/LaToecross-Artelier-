@@ -314,12 +314,6 @@ new class extends Component
                                                     Sold Out
                                                 </span>
                                             @endif
-                                            @if($fashion->is_featured)
-                                                <span class="px-2.5 py-1 text-[10px] font-bold rounded-full uppercase tracking-wider"
-                                                      style="background: #fce4ec; color: #DB2077;">
-                                                    ★ Featured
-                                                </span>
-                                            @endif
                                         </div>
 
                                         <!-- Category Tag -->
